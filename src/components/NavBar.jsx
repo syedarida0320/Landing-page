@@ -10,7 +10,7 @@ function NavBar() {
       <nav>
         <ul className={`list-none flex items-start text-[16px] gap-[5px] ${className || ""}`}>
           {items.map((item, index) => (
-            <li key={index} className="flex justify-center items-center cursor-pointer">
+            <li key={index} className="flex w-full cursor-pointer">
               <span>{item}</span>
               {item === "Shop" && (
                 <svg
@@ -22,7 +22,7 @@ function NavBar() {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="ml-1"
+                  className="ml-auto"
                 >
                   <path d="m6 9 6 6 6-6" />
                 </svg>
@@ -68,7 +68,7 @@ function NavBar() {
         <div className="flex justify-between items-center h-[48px] gap-[40px]">
           {/* Left section (logo + menu toggle) */}
           <div className="flex items-center gap-[20px]">
-            <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
+            <button className="md:hidden cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
               {isOpen ? (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -120,10 +120,10 @@ function NavBar() {
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-search-icon lucide-search"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="lucide lucide-search-icon lucide-search"
           >
             <path d="m21 21-4.34-4.34" />
             <circle cx="11" cy="11" r="8" />
@@ -172,7 +172,7 @@ function NavBar() {
         {/* Mobile nav menu */}
         <div
           className={`
-            md:hidden overflow-hidden transition-all duration-500 ease-in-out
+            md:hidden overflow-hidden transition-all duration-500 ease-in-out overflow-y-auto
             ${isOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"}
           `}
         >

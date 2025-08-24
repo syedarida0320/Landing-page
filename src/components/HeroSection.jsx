@@ -101,12 +101,12 @@ const HeroImage = () => {
         }`}
       />
       <img
-        src="Vector.png"
+        src="vector-1.png"
         alt="Vector 1"
         className="absolute left-0 top-[98px] vector-1"
       />
       <img
-        src="Vector (1).png"
+        src="vector-2.png"
         alt="Vector 2"
         className="absolute right-3 -top-6 w-[76px]"
       />
