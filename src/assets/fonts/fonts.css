@@ -1,0 +1,12 @@
+@theme{
+--font-integral: "integral CF bold";
+}
+@theme{
+    --font-satoshi: "satoshi regular";
+}
+@theme{
+    --font-satoshi-medium: "satoshi medium";
+}
+@theme{
+    --font-satoshi-bold: "satoshi-bold";
+}
