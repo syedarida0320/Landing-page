@@ -1,8 +1,17 @@
-const ProductCard = ({ imgSrc, alt, title, rating, price, originalPrice, discount, hidden }) => {
+const ProductCard = ({
+  imgSrc,
+  alt,
+  title,
+  rating,
+  price,
+  originalPrice,
+  discount,
+  hidden,
+}) => {
   return (
     <div
       className={`bg-[#f7f7f7] rounded-[16px] box-border flex flex-col items-start flex-1 w-[48%] p-[10px] card ${
- hidden ? "hidden" : ""
+        hidden ? "hidden" : ""
       }`}
     >
       <img
