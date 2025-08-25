@@ -1,9 +1,9 @@
 import ProductSection from "./ProductSection";
 
-import Frame1 from "../assets/images/Frame 1.png";
-import Frame2 from "../assets/images/Frame 2.png";
-import Frame3 from "../assets/images/Frame 3.png";
-import Frame4 from "../assets/images/Frame 4.png";
+import Frame1 from "../assets/images/frame-1.png";
+import Frame2 from "../assets/images/frame-2.png";
+import Frame3 from "../assets/images/frame-3.png";
+import Frame4 from "../assets/images/frame-4.png";
 
 const NewArrivals = () => {
   const products = [
@@ -28,8 +28,7 @@ const NewArrivals = () => {
       alt: "Checkered Shirt",
       title: "Checkered Shirt",
       rating: "★★★★☆ 4.5/5",
-      price: "$180",
-      hidden: true,
+      price: "$180"
     },
     {
       imgSrc: Frame4,
@@ -38,8 +37,7 @@ const NewArrivals = () => {
       rating: "★★★★☆ 4.5/5",
       price: "$130",
       originalPrice: "$160",
-      discount: "-30%",
-      hidden: true,
+      discount: "-30%"
     },
   ];
 
