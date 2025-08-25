@@ -9,11 +9,11 @@ import gymImage from "../assets/images/gym-image.png";
 const DressCard = ({ title, image, alt, type }) => {
   return (
     <div
-      className={`relative overflow-hidden rounded-[30px] bg-white shadow-[0_4px_20px_rgba(0,0,0,0.1)] transition-transform duration-300 ease-in-out h-[190px] w-full ${
-        type === "short" ? "flex items-center" : "flex-[1_1_55%]"
+      className={`relative md:w-[55%]  overflow-hidden rounded-[30px] bg-white shadow-[0_4px_20px_rgba(0,0,0,0.1)] transition-transform duration-300 ease-in-out md:h-[270px] h-[190px] w-full flex items-start  ${
+        type === "short" ? " md:w-auto flex items-center" : "  flex-[1_1_55%]"
       }`}
     >
-      <span className="font-satoshi-bold absolute mt-[16px] ml-[24px] rounded-[10px] bg-[#ffffffd9] px-[14px] py-[6px] text-[24px] leading-[100%]">
+      <span className="font-satoshi-bold absolute md:mt-[15px]  md:ml-[15px] md:text-[36px] md:py-[6px] md:px-[14px] md:rounded-[10px] mt-[16px] ml-[24px] rounded-[10px] bg-[#ffffffd9] px-[14px] py-[6px] text-[24px] leading-[100%] dress-category">
         {title}
       </span>
       <img
@@ -25,26 +25,36 @@ const DressCard = ({ title, image, alt, type }) => {
   );
 };
 
-// --- Main DressContainer (previously DressStyle) ---
+// --- Main DressContainer ---
 const DressContainer = () => {
   const [dressStyles, setDressStyles] = useState([]);
 
   useEffect(() => {
     setDressStyles([
-      { title: "Casual", image: casualImage, alt: "casual dress", type: "short" },
-      { title: "Formal", image: formalImage, alt: "formal dress", type: "long" },
+      {
+        title: "Casual",
+        image: casualImage,
+        alt: "casual dress",
+        type: "short",
+      },
+      {
+        title: "Formal",
+        image: formalImage,
+        alt: "formal dress",
+        type: "long",
+      },
       { title: "Party", image: partyImage, alt: "party dress", type: "long" },
       { title: "Gym", image: gymImage, alt: "gym outfit", type: "short" },
     ]);
   }, []);
 
   return (
-    <div className="mx-[16px] my-[40px] rounded-[24px] bg-[#f0f0f0] p-[20px] shadow-[0_4px_12px_rgba(0,0,0,0.08),0_6px_24px_rgba(0,0,0,0.06)]">
-      <div className="font-integral flex justify-center px-[56px] pt-[40px] pb-[28px] text-[32px] font-bold leading-[36px] text-black">
+    <div className="md:my-[40px] md:mx-[100px] md:rounded-[40px] md:p-[60px] mx-[16px] my-[40px] rounded-[24px] bg-[#f0f0f0] p-[20px] shadow-[0_4px_12px_rgba(0,0,0,0.08),0_6px_24px_rgba(0,0,0,0.06)] dress-container">
+      <div className="md:text-[48px] md:pt-[20px] md:pb-[50px]   font-integral flex justify-center px-[56px] pt-[40px] pb-[28px] text-[32px] font-bold leading-[36px] text-black dress-text">
         BROWSE BY DRESS STYLE
       </div>
 
-      <div className="dress-grid flex flex-wrap justify-center gap-[16px]">
+      <div className="dress-grid flex flex-wrap md:gap-[20px] justify-center gap-[16px]">
         {dressStyles.map((style, index) => (
           <DressCard
             key={index}
