@@ -1,2 +1,20 @@
 @import "tailwindcss";
 @import '../src/assets/fonts/fonts.css';
+
+@font-face {
+  font-family: "integral CF bold";
+  src: url("../src/assets/fonts/Fontspring-DEMO-integralcf-bold.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "satoshi regular";
+  src: url("../src/assets/fonts/Satoshi-Regular.otf") format("truetype");
+}
+@font-face {
+  font-family: "satoshi bold";
+  src: url("../src/assets/fonts/Satoshi-Bold.otf") format("truetype");
+}
+@font-face {
+  font-family: "satoshi medium";
+  src: url("../src/assets/fonts/Satoshi-Medium.otf") format("truetype");
+}
