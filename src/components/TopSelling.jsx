@@ -28,16 +28,14 @@ const TopSelling = () => {
       alt: "Loose Fit Bermuda Shorts",
       title: "Loose Fit Bermuda Shorts",
       rating: "★★★★★ 5.0/5",
-      price: "$80",
-      hidden: true,
+      price: "$80"
     },
     {
       imgSrc: Img4,
       alt: "Faded Skinny Jeans",
       title: "Faded Skinny Jeans",
       rating: "★★★★★ 5.0/5",
-      price: "$210",
-      hidden: true,
+      price: "$210"
     },
   ];
 
