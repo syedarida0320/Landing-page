@@ -1,27 +1,19 @@
-import { useState, useEffect } from "react";
+import React, {Fragment} from "react";
 
 import VersaceLogo from "../assets/images/versace-logo.png";
 import ZaraLogo from "../assets/images/zara-logo.png";
 import GucciLogo from "../assets/images/gucci-logo.png";
 import PradaLogo from "../assets/images/prada-logo.png";
 import CalvinKleinLogo from "../assets/images/calvin-klein-logo.png";
+import {memo} from "react";
 
 // --- BrandLogo merged here ---
-const BrandLogo = ({ src, alt, className }) => {
+const BrandLogo = memo(({ src, alt, className }) => {
   return <img className={className} src={src} alt={alt} />;
-};
+});
 
 // --- Main BrandContainer component ---
 const BrandContainer = () => {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
   const brands = [
     { src: VersaceLogo, alt: "versace-logo" },
     { src: ZaraLogo, alt: "zara-logo" },
@@ -30,9 +22,9 @@ const BrandContainer = () => {
     { src: CalvinKleinLogo, alt: "calvin-klein-logo" },
   ];
 
-  if (!isMobile) {
     return (
-      <div className="bg-black py-[20px] px-[70px] main-container-2">
+      <Fragment>
+      <div className="bg-black py-[20px] px-[70px] hidden md:block">
         <ul className="gap-[30px] flex flex-wrap justify-center items-center m-0 p-0 list-none">
           {brands.map((brand, index) => (
             <li key={index} className="p-[10px] brand-logo">
@@ -45,16 +37,11 @@ const BrandContainer = () => {
           ))}
         </ul>
       </div>
-    );
-  } else {
-    const firstRow = brands.slice(0, 3);
-    const secondRow = brands.slice(3);
-
-    return (
-      <div className="bg-black py-[20px] px-[16px] mobile-container-2">
+  
+      <div className="bg-black py-[20px] px-[16px] md:hidden mobile-container-2">
         {/* First row (3 logos) */}
         <div className="flex justify-center gap-[20px] mb-[20px]">
-          {firstRow.map((brand, index) => (
+           {brands.slice(0, 3).map((brand, index) => (
             <BrandLogo
               key={index}
               src={brand.src}
@@ -66,7 +53,7 @@ const BrandContainer = () => {
 
         {/* Second row (2 logos centered) */}
         <div className="flex justify-center gap-[20px]">
-          {secondRow.map((brand, index) => (
+          {brands.slice(3).map((brand, index) => (
             <BrandLogo
               key={index}
               src={brand.src}
@@ -76,8 +63,9 @@ const BrandContainer = () => {
           ))}
         </div>
       </div>
+    </Fragment>
     );
-  }
 };
 
 export default BrandContainer;
+
