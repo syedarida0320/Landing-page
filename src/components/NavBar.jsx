@@ -37,7 +37,7 @@ function NavBar() {
   return (
     <div>
       {/* --- Banner --- */}
-      <div className="md:py-0 md:px-[100px] py-[5px] px-[20px] bg-black text-white flex items-center justify-center">
+      <div className="md:py-[12px] md:px-[100px] py-[5px] px-[20px] bg-black text-white flex items-center justify-center">
         <div className="py-[7px] px-0 w-full flex">
           <p className="md:text-[14px] font-satoshi text-[12px] flex-1 text-center">
             Sign up and get 20% off to your first order.
@@ -128,9 +128,9 @@ function NavBar() {
             <path d="m21 21-4.34-4.34" />
             <circle cx="11" cy="11" r="8" />
           </svg>
-          
+
             <input
-              className="md:w-full md:ml-[5px] md:font-satoshi focus:outline-none"
+              className="md:w-full md:ml-[5px] font-satoshi focus:outline-none"
               type="text"
               placeholder="Search for products..."
             />
